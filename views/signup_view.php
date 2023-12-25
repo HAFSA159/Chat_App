@@ -7,6 +7,9 @@
 </head>
 <body>
 <body>
+    <?php 
+    $dataAccess = User::displayUser(20);    
+    ?>
     
     <section class="container">
         <div class="login-container">
@@ -28,7 +31,7 @@
             <div class="circle circle-two"></div>
         </div>
         <div class="theme-btn-container"></div>
-   
+
     </section>
 </body>
 </body>

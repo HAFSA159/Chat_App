@@ -55,4 +55,60 @@ class User
             return false; 
         }
     }
-}
+    static function displayUser($id){
+        global $db;
+        $sql = "SELECT * FROM users WHERE users_id = ?";
+        $stmt = $db->prepare($sql);
+
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        $userData = $result->fetch_assoc();
+    
+        $stmt->close();
+
+        if ($userData) {
+            echo "User ID: " . $userData['users_id'] . "<br>";
+            echo "Username: " . $userData['username'] . "<br>";
+            echo "Email: " . $userData['email'] . "<br>";
+
+        } else {
+            echo "User not found";
+        }
+    }
+
+    public function login($email, $password){
+        global $db;
+
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $db->prepare($sql);
+
+       $stmt->bind_param('s', $email);
+       $stmt->execute();
+       $result = $stmt->get_result();
+
+       if($result){
+           $num_rows = $result->num_rows;
+
+       if($num_rows>0){
+
+       }else{
+           echo "no rows found";
+       }
+       }
+
+       $user = $result->fetch_assoc();
+       if (password_verify($password, $user['password'])) {
+           $_SESSION["id"] = $user['id_user'];
+           $_SESSION["email"] = $user['email'];
+           header('#');
+           exit();
+       } else {
+           echo "Password doesn't match" ;
+       }
+       return $user;
+   }
+
+    }
