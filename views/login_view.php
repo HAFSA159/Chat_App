@@ -14,8 +14,8 @@
                 <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
                 <h1 class="opacity">LOGIN</h1>
                 <form action="index.php?page=login" method="post">
-                    <input type="text" name="username" placeholder="USERNAME" required/>
-                    <input type="password" name="username" placeholder="PASSWORD" required/>
+                    <input type="email" name="email" placeholder="EMAIL" required/>
+                    <input type="password" name="password" placeholder="PASSWORD" required/>
                     <button class="opacity" name="submit" >SUBMIT</button>
                 </form>
                 <div class="register-forget opacity">

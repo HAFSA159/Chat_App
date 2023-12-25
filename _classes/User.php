@@ -39,22 +39,14 @@ class User
     }
 
     static function NewUser($username, $email, $password){
-
         global  $db;
 
-        if ($password === null) {
-            return false;
-        }
-        
-        $hashedpassword= password_hash($password, PASSWORD_DEFAULT);       
-        $query = ("INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedpassword')");
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $query = ("INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')");
 
-        if($db->query($query)){
-            return true;
-        }else{
-            return false; 
-        }
+        return $db->query($query);
     }
+
     static function displayUser($id){
         global $db;
         $sql = "SELECT * FROM users WHERE users_id = ?";
@@ -79,36 +71,35 @@ class User
         }
     }
 
-    public function login($email, $password){
+    static public function login($email, $password){
         global $db;
 
         $sql = "SELECT * FROM users WHERE email = ?";
         $stmt = $db->prepare($sql);
 
-       $stmt->bind_param('s', $email);
-       $stmt->execute();
-       $result = $stmt->get_result();
+        if (!$stmt) {
+            return "Error preparing statement: " . $db->error;
+        }
 
-       if($result){
-           $num_rows = $result->num_rows;
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
 
-       if($num_rows>0){
+        $result = $stmt->get_result();
 
-       }else{
-           echo "no rows found";
-       }
-       }
+        if (!$result) {
+            return "Error getting result set: " . $stmt->error;
+        }
 
-       $user = $result->fetch_assoc();
-       if (password_verify($password, $user['password'])) {
-           $_SESSION["id"] = $user['id_user'];
-           $_SESSION["email"] = $user['email'];
-           header('#');
-           exit();
-       } else {
-           echo "Password doesn't match" ;
-       }
-       return $user;
-   }
+        $user = $result->fetch_assoc();
 
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                return "ma3likch";
+            } else {
+                return "Password doesn't match";
+            }
+        } else {
+            return "No rows found";
+        }
     }
+}
