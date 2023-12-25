@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?= PATH ?>assets/css/style.css">
 </head>
 <body>
-    <h1><?= ucfirst($page) ?> View</h1>
+    <!-- <h1><?= ucfirst($page) ?> View</h1> -->
 
     <main>
         <?php include_once 'views/' . $page . '_view.php'; ?>

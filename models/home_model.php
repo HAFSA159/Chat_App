@@ -1,6 +1,6 @@
 <?php
 
-echo '<h3>- Home Model -</h3>';
+// echo '<h3>- Home Model -</h3>';
 
 //$user = new User(1);
 //$user->username = 'Baz';
