@@ -9,4 +9,5 @@ if(isset($_POST['submit'])){
 //        $Usere = new User('39');
 //        $bachiri = $Usere->getUserById('39');
 //        dd($bachiri);
-//?>
+//
+?>
