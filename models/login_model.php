@@ -4,5 +4,9 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
     $User = User::login($email, $password);
-    echo $User;
+//    echo $User;
 }
+        $Usere = new User('39');
+        $bachiri = $Usere->getUserById('39');
+        dd($bachiri);
+?>

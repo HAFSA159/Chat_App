@@ -67,7 +67,7 @@ class User
             echo "Email: " . $userData['email'] . "<br>";
 
         } else {
-            echo "User not found";
+//            echo "User not found";
         }
     }
 
@@ -94,7 +94,7 @@ class User
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                return "ma3likch";
+//                return "ma3likch";
             } else {
                 return "Password doesn't match";
             }
@@ -102,4 +102,21 @@ class User
             return "No rows found";
         }
     }
+
+    public function getUserById($UserId)
+    {
+        global $db;
+        $sql = "SELECT * FROM users WHERE users_id = ?";
+        $stmt = $db->prepare($sql);
+
+        $stmt->bind_param('i', $UserId);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        $stmt->close();
+        return $user;
+    }
+
 }
