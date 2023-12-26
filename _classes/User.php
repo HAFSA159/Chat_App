@@ -128,7 +128,7 @@ class User
 
          static public function NewRoom($id,$roomName,$creat_id){
              global $db;
-             $query = ("INSERT INTO rooms (id, roomName, create_id) VALUES ('$id','$roomName','$creat_id')";
+             $query = ("INSERT INTO rooms (id, roomName, create_id) VALUES ('$id','$roomName','$creat_id')");
              return $db->query($query);
          }
      }
