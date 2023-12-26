@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
     $User = User::login($email, $password);
 //    echo $User;
 }
-        $Usere = new User('39');
-        $bachiri = $Usere->getUserById('39');
-        dd($bachiri);
-?>
+//        $Usere = new User('39');
+//        $bachiri = $Usere->getUserById('39');
+//        dd($bachiri);
+//?>
