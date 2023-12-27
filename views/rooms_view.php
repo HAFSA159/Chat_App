@@ -113,7 +113,7 @@ if(!isset($_SESSION['x'])){
                         >
                             H
                         </div>
-                        <div class="ml-2 text-sm font-semibold">Henry Boyd</div>
+                        <div class="ml-2 text-sm font-semibold"><?php ?></div>
                     </button>
                 </div>
             </div>
