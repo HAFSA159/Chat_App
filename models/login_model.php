@@ -4,11 +4,14 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
     $User = User::login($email, $password);
-    $_SESSION['x'] = 'logout';
-    header('location: index.php?page=rooms');
-
-//    dd($User);
-    $_SESSION['c'] = $User;
+    if ($User !== false){
+        $_SESSION['x'] = 'logout';
+        header('location: index.php?page=rooms');
+        $_SESSION['c'] = $User;
+    } else {
+        header('location: index.php?page=login');
+        echo 'psw 4alt ';
+    }
 }
 
 

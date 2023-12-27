@@ -8,7 +8,7 @@
 
         static public function NewRoom($roomName, $user){
             global $db;
-            $query = ("INSERT INTO rooms (roomName,create_id) VALUES ('$roomName', '$user')");
+            $query = ("INSERT INTO rooms (roomName, create_id) VALUES ('$roomName', '$user')");
             return $db->query($query);
         }
     }

@@ -96,10 +96,10 @@ class User
             if (password_verify($password, $user['password'])) {
                 return $user['users_id'];
             } else {
-                return "Password doesn't match";
+                return false;
             }
         } else {
-            return "No rows found";
+            return false;
         }
 
     }
