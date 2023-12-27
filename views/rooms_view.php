@@ -24,6 +24,13 @@
                 <div class="ml-2 font-bold text-2xl">CatChat</div>
             </div>
             <div class="flex flex-col mt-8">
+
+                <form action="index.php?page=login" method="post">
+                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full mb-6" name="logout">
+                       Logout
+                    </button>
+                </form>
+
                 <div class="flex flex-row items-center justify-between text-xs">
                     <span class="font-bold">Active Conversations</span>
                 </div>

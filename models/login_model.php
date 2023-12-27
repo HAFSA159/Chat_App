@@ -10,4 +10,15 @@ if(isset($_POST['submit'])){
 //        $bachiri = $Usere->getUserById('39');
 //        dd($bachiri);
 //
+
+
+
+if (isset($_POST['logout'])) {
+    session_destroy();
+
+} else {
+    echo 'failed';
+}
+
+
 ?>
