@@ -30,14 +30,16 @@ if(!isset($_SESSION['x'])){
             </div>
             <div class="flex flex-col mt-8">
 
-                <form action="index.php?page=login" method="post">
-                    <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full mb-6" name="logout">
-                       Logout
-                    </button>
-                </form>
+
 
                 <div class="flex flex-row items-center justify-between text-xs">
                     <span class="font-bold">Active Conversations</span>
+                    <form action="index.php?page=login" method="post">
+                        <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full mb-2" name="logout">
+                            Logout
+                        </button>
+                    </form>
+
                 </div>
                 <div class="flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-auto">
                     <button
@@ -98,6 +100,9 @@ if(!isset($_SESSION['x'])){
                 </div>
                 <div class="flex flex-row items-center justify-between text-xs mt-6">
                     <span class="font-bold">Rooms</span>
+                        <a href="index.php?page=creatroom" class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-full mb-2 name="logout">
+                       + Add room
+                        </a>
                 </div>
                 <div class="flex flex-col space-y-1 mt-4 -mx-2">
                     <button

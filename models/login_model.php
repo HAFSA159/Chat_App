@@ -6,19 +6,18 @@ if(isset($_POST['submit'])){
     $User = User::login($email, $password);
     $_SESSION['x'] = 'logout';
     header('location: index.php?page=rooms');
-//    echo $User;
+
+//    dd($User);
+    $_SESSION['c'] = $User;
 }
-//        $Usere = new User('39');
-//        $bachiri = $Usere->getUserById('39');
-//        dd($bachiri);
-//
+
 
 
 if (isset($_POST['logout'])) {
     session_destroy();
 
 } else {
-    echo 'failed';
+//    echo 'failed';
 }
 
 
