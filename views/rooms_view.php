@@ -1,5 +1,10 @@
 <!-- component -->
-<div class="flex h-screen antialiased text-gray-800">
+<?php
+if(!isset($_SESSION['x'])){
+    header("location: index.php?page=login");
+}
+?>
+ <div class="flex h-screen antialiased text-gray-800">
     <div class="flex flex-row h-full w-full overflow-x-hidden">
         <div class="flex flex-col py-8 pl-6 pr-2 w-64 bg-white flex-shrink-0">
             <div class="flex flex-row items-center justify-center h-12 w-full">
