@@ -9,7 +9,6 @@ if(isset($_POST['submit']) && isset($_FILES['roomPic']['name'])){
 
     move_uploaded_file($_FILES['roomPic']['tmp_name'], $uploadFile);
 
-
     $v = $_SESSION['c'];
     $Room = Room::NewRoom($roomName,$file, $v);
     header('location: index.php?page=rooms');
