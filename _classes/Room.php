@@ -6,9 +6,9 @@
         public $name;
         public $creat_id;
 
-        static public function NewRoom($roomName,$user){
+        static public function NewRoom($roomName,$file,$user){
             global $db;
-            $query = ("INSERT INTO rooms (roomName, create_id) VALUES ('$roomName', '$user')");
+            $query = ("INSERT INTO rooms (roomName,file,create_id) VALUES ('$roomName','$file','$user')");
             return $db->query($query);
         }
             static public function GetAllRooms($id) {
@@ -25,18 +25,5 @@
                     return $rus->fetch_all(MYSQLI_ASSOC);
 
                 }
-//            static function GetAllUsers(){
-//                global $db;
-//                $sql = "SELECT * FROM users";
-//                $stmt = $db->prepare($sql);
-//
-//                $stmt->execute();
-//
-//                $result = $stmt->get_result();
-//
-//                $userData = $result->fetch_all(MYSQLI_ASSOC);
-//
-//                $stmt->close();
-//                return $userData;
-//            }
+
     }
