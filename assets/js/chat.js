@@ -7,7 +7,7 @@ btn.onclick = ()=>{
     xhr.onload = ()=>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
-                let data = xhr.response;
+                let data = xhr.responseText;
                 console.log(data)
             }
         }

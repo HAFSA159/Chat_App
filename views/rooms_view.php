@@ -53,7 +53,7 @@ if(!isset($_SESSION['x'])){
                         <div
                                 class=" flex items-center justify-center h-8 w-8 bg-purple-200 rounded-full"
                         >
-                            <img class="rounded-fu  ll" src="assets/image/<?= $rs['file'] ?>" alt="">
+                            <img class="rounded-full" src="assets/image/<?= $rs['file'] ?>" alt="">
 
                         </div>
                         <div class="ml-2 text-sm font-semibold"><?= $rs['username'] ?></div>
