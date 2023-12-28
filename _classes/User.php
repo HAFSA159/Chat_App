@@ -38,11 +38,11 @@ class User
         $this->password = password_hash($pwd, PASSWORD_DEFAULT);
     }
 
-    static function NewUser($username, $email, $password){
+    static function NewUser($username, $email, $password, $file){
         global  $db;
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $query = ("INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')");
+        $query = ("INSERT INTO users (username, email, password, file) VALUES ('$username', '$email', '$hashedPassword','$file')");
 
         return $db->query($query);
     }
