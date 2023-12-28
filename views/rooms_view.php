@@ -216,7 +216,7 @@ if(!isset($_SESSION['x'])){
                         class="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4"
                 >
                     <div>
-                        <button
+                        <button id="send"
                                 class="flex items-center justify-center text-gray-400 hover:text-gray-600"
                         >
                             <svg
@@ -239,6 +239,22 @@ if(!isset($_SESSION['x'])){
                         <div class="relative w-full">
                             <input
                                     type="text"
+                                    name="content"
+                                    id="content"
+                                    class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                            />
+
+                            <input
+                                    type="hidden"
+                                    value="51"
+                                    name="sender"
+                                    class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
+                            />
+
+                            <input
+                                    type="hidden"
+                                    value="52"
+                                    name="reciever"
                                     class="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10"
                             />
                             <button
@@ -263,6 +279,8 @@ if(!isset($_SESSION['x'])){
                     </div>
                     <div class="ml-4">
                         <button
+                                type="submit"
+                                id="btn"
                                 class="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0"
                         >
                             <span>Send</span>
@@ -284,7 +302,7 @@ if(!isset($_SESSION['x'])){
                 </span>
                         </button>
                     </div>
-                </div>
+                        </div>
             </div>
         </div>
     </div>

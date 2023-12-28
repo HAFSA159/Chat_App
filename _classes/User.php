@@ -38,6 +38,7 @@ class User
         $this->password = password_hash($pwd, PASSWORD_DEFAULT);
     }
 
+
     static function NewUser($username, $email, $password, $file){
         global  $db;
 
@@ -46,6 +47,8 @@ class User
 
         return $db->query($query);
     }
+
+
 
     static function displayUser($id){
         global $db;

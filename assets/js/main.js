@@ -1,3 +1,4 @@
+
 const themes = [
     {
         background: "#1A1A2E",
@@ -45,9 +46,10 @@ const displayThemeButtons = () => {
         const div = document.createElement("div");
         div.className = "theme-btn";
         div.style.cssText = `background: ${theme.background}; width: 25px; height: 25px`;
-        btnContainer.appendChild(div);
+        btnContainer?.appendChild(div);
         div.addEventListener("click", () => setTheme(theme));
     });
 };
 
 displayThemeButtons();
+
