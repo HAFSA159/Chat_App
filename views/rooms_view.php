@@ -105,16 +105,24 @@ if(!isset($_SESSION['x'])){
                         </a>
                 </div>
                 <div class="flex flex-col space-y-1 mt-4 -mx-2">
-                    <button
+
+                        <?php
+                        $id = $_SESSION['c'];
+                        $tab = Room::GetAllRooms($id);
+                        foreach ($tab as $rs) { ?>
+                            <button
                             class="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2"
-                    >
+                            >
                         <div
                                 class="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"
-                        >
+                            >
                             H
                         </div>
-                        <div class="ml-2 text-sm font-semibold"><?php ?></div>
-                    </button>
+                          <?=   '<div class="ml-2 text-sm font-semibold">' . $rs['roomName'] . '</div>';?>
+                               </button>
+                    <?php } ?>
+
+
                 </div>
             </div>
         </div>
