@@ -7,11 +7,13 @@ btn.onclick = ()=>{
     xhr.onload = ()=>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
-                let data = xhr.responseText;
+                let data = xhr.response;
                 console.log(data)
             }
         }
     }
     let formData = new FormData();
-    xhr.send(formData);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    xhr.send(`zkiko=${'zk'}`);
 }
+ 

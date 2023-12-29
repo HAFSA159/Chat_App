@@ -21,7 +21,6 @@
     <footer></footer>
     <!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script> -->
     <script src="<?= PATH ?>assets/js/main.js"></script> 
-    <script src="<?= PATH ?>assets/js/chat.js"></script>   
   
 </body>
 </html>

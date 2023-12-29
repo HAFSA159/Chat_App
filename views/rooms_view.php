@@ -304,6 +304,8 @@ if(!isset($_SESSION['x'])){
                     </div>
                         </div>
             </div>
+
         </div>
     </div>
 </div>
+<script src="<?= PATH ?>assets/js/chat.js"></script> 
